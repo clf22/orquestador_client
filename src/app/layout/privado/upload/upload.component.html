@@ -1,0 +1,11 @@
+<div class="container">
+    <h2>Subida de fichero</h2>
+    <label for="archivo" class="custom-file-upload">
+      <i class="fas fa-cloud-upload-alt"></i> seleccionar archivo
+    </label>
+    <input id="archivo" type="file" (change)="handleFileInput($event)" />
+
+    <div *ngIf="myFile">Nombre del archivo: {{ myFile.name }}</div>
+
+    <button (click)="uploadFile()" [disabled]="!myFile">Subir</button>
+</div>

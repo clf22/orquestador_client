@@ -1,0 +1,62 @@
+$azul-zafiro: #0F52BA;
+
+h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+
+    label {
+      font-size: 16px;
+      margin-bottom: 5px;
+    }
+
+    input {
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      width: 300px;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: $azul-zafiro;
+      box-shadow: 0 0 5px $azul-zafiro;
+    }
+  }
+
+  button {
+    padding: 10px;
+    font-size: 16px;
+    color: #fff;
+    background-color: $azul-zafiro;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 300px;
+    transition: background-color .35s ease-in-out;
+
+    &:hover {
+      background-color: darken($azul-zafiro, 5%);
+    }
+
+    &:disabled {
+      color: $azul-zafiro;
+      background-color: #fff;
+      border: 1px solid $azul-zafiro; /* Agrega el borde aquí */
+      cursor: not-allowed;
+      transition: background-color .35s ease-in-out;
+    }
+  }
+}
