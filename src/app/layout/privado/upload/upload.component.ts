@@ -33,12 +33,19 @@ export class UploadComponent {
       formData.append('json', JSON.stringify({instanciaDatos:"CSU_facturacion2"}));
       
       try {
-        const response = await lastValueFrom(this.http.post('http://172.18.72.42:3777/api/cargaDatos', formData, httpOptions)
+        const respuesta = await lastValueFrom(this.http.post('http://172.18.72.42:3777/api/cargaDatos', formData, httpOptions)
           .pipe(
             tap( (res:any) => {})
           )
         );
-        console.log(response);
+        console.log(respuesta);
+        
+        if(respuesta.code === 200) {
+          console.log(respuesta.data);
+          alert('Fichero subido correctamente')
+          this.myFile = null
+        }
+
       } catch (error) {
         console.error(error);
       }
