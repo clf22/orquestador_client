@@ -20,7 +20,7 @@ export class UploadComponent {
 
   public async uploadFile() {
     if (this.myFile) {
-      const token = localStorage.getItem('access_token')
+      const token = sessionStorage.getItem('access_token')
       const httpOptions = {
         headers: new HttpHeaders({
           // 'Content-Type': 'multipart/form-data',

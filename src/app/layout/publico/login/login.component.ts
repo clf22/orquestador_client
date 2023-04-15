@@ -17,6 +17,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.myForm = this.createMyForm();
+    sessionStorage.clear()
   }
 
   private createMyForm():FormGroup {
@@ -57,17 +58,14 @@ export class LoginComponent implements OnInit {
         .pipe(
           tap( (res:any) => {
             // acción a realizar en caso de respuesta exitosa
-            this.router.navigate(['/upload']);
           })
         ));
-        console.log(respuesta);
+      console.log(respuesta);
         
       if(respuesta.code === 200) {
-        console.log(respuesta.data);
-        
-        localStorage.setItem('access_token', respuesta.data);
+        sessionStorage.setItem('access_token', respuesta.data);
+        this.router.navigate(['/upload']);
       }
-      // console.log(respuesta);
     } catch (error:any) {
       alert(error.status + error.message)
       console.error(error.status);

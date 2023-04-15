@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './layout/publico/login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UploadComponent } from './layout/privado/upload/upload.component';
+import { AuthGuard } from './setting/auth.guard';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,7 @@ import { UploadComponent } from './layout/privado/upload/upload.component';
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
