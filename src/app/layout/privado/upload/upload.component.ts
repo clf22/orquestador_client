@@ -44,6 +44,8 @@ export class UploadComponent {
           console.log(respuesta.data);
           alert('Fichero subido correctamente')
           this.myFile = null
+        } else {
+          alert(respuesta.message)
         }
 
       } catch (error) {
