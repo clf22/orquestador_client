@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { lastValueFrom, tap } from 'rxjs';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-upload',
@@ -9,7 +10,7 @@ import { lastValueFrom, tap } from 'rxjs';
 })
 export class UploadComponent {
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private toast: ToastrService) {}
 
   public myFile: File | null | undefined;
 
@@ -42,13 +43,14 @@ export class UploadComponent {
         
         if(respuesta.code === 200) {
           console.log(respuesta.data);
-          alert('Fichero subido correctamente')
+          this.toast.success(respuesta.message)
           this.myFile = null
         } else {
-          alert(respuesta.message)
+          this.toast.error(respuesta.message)
         }
 
-      } catch (error) {
+      } catch (error:any) {
+        this.toast.error(error.message)
         console.error(error);
       }
     }

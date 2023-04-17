@@ -8,6 +8,9 @@ import { LoginComponent } from './layout/publico/login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UploadComponent } from './layout/privado/upload/upload.component';
 import { AuthGuard } from './setting/auth.guard';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+
 
 @NgModule({
   declarations: [
@@ -20,7 +23,9 @@ import { AuthGuard } from './setting/auth.guard';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
   ],
   providers: [AuthGuard],
   bootstrap: [AppComponent]

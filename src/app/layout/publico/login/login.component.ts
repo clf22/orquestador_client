@@ -4,6 +4,7 @@ import { HttpClient, HttpHeaders} from '@angular/common/http'
 import { tap} from 'rxjs/operators'
 import { lastValueFrom } from 'rxjs';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +14,7 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
   public myForm!:FormGroup;
   
-  constructor(private fb:FormBuilder, private http:HttpClient, private router:Router) {}
+  constructor(private fb:FormBuilder, private http:HttpClient, private router:Router, private toast: ToastrService) {}
 
   ngOnInit(): void {
     this.myForm = this.createMyForm();
@@ -63,11 +64,12 @@ export class LoginComponent implements OnInit {
       console.log(respuesta);
         
       if(respuesta.code === 200) {
+        this.toast.success(respuesta.message)
         sessionStorage.setItem('access_token', respuesta.data);
         this.router.navigate(['/upload']);
       }
     } catch (error:any) {
-      alert(error.status + error.message)
+      this.toast.error(error.message)
       console.error(error.status);
     }
   }
