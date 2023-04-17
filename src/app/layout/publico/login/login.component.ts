@@ -64,7 +64,6 @@ export class LoginComponent implements OnInit {
       console.log(respuesta);
         
       if(respuesta.code === 200) {
-        this.toast.success(respuesta.message)
         sessionStorage.setItem('access_token', respuesta.data);
         this.router.navigate(['/upload']);
       }
