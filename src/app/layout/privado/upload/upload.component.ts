@@ -21,7 +21,8 @@ export class UploadComponent {
   }
 
   public async uploadFile() {
-    if (this.myFile) {
+    /*
+      if (this.myFile) {
       const token = sessionStorage.getItem('access_token')
       const httpOptions = {
         headers: new HttpHeaders({
@@ -55,6 +56,7 @@ export class UploadComponent {
         console.error(error);
       }
     }
+    */
   }
 
 }
