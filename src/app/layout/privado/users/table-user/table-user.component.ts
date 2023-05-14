@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { lastValueFrom } from 'rxjs';
+import { HttpService } from 'src/app/utils/http.service';
 
 @Component({
   selector: 'app-table-user',
@@ -13,8 +14,8 @@ export class TableUserComponent {
   public tableHeader: any = []
 
   constructor(
-    private http: HttpClient,
-    private toast: ToastrService
+    private toast: ToastrService,
+    private request: HttpService
   ) {}
 
   async ngOnInit() {
@@ -30,7 +31,9 @@ export class TableUserComponent {
         })
       };
       //TODO: CAMBIAR LLAMADA
-      this.usuarios = await lastValueFrom(this.http.get(apiUrl, httpOptions));
+      this.usuarios = await this.request.request('GET', apiUrl)
+      console.log('>>>>>>',this.usuarios);
+      
       this.tableHeader = Object.keys(this.usuarios[0])
       
     } catch (error:any) {
