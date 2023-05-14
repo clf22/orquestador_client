@@ -18,13 +18,14 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: $plata;
+  background: white;
   position: absolute;
   top: 0;
   z-index: 1;
 
   .icon_menu {
     border-bottom: 1px solid black;
+    background-color: $azul-alpha;
 
     .toggle{
       font-size: 1.5rem;
@@ -34,13 +35,12 @@ header {
       font-size: 1.75rem;
       transition: .3s;
       color: white;
-      background-color: $azul-alpha;
     }
   }
 
   .logout {
     transition: .3s;
-    background: $plata;
+    background: white;
     .door-closed{
       font-size: 2rem;
       color: $azul;
@@ -58,7 +58,7 @@ header {
     .door-open {
       display: initial;
       font-size: 2rem;
-      color: $plata;
+      color: white;
     }
   }
 
@@ -101,7 +101,7 @@ menu {
         .icon_menu {
           color: white;
         }
-        p {
+        h5 {
           color: white;
         }
       } 
@@ -112,7 +112,7 @@ menu {
         justify-content: center;
         padding: 20px;
       }
-      p {
+      h5 {
         display: none;
         color: $textMenu;
       }
@@ -141,10 +141,13 @@ menu {
           width: 20px;
           //display: none;
         }
-        p {
+        h5 {
           margin-left: 10px;
           display: initial;
         }
+      }
+      .option:hover {
+        background-color: #FFFFFF59;
       }
     }
   }

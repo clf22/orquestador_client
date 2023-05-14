@@ -1,4 +1,7 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { lastValueFrom, tap } from 'rxjs';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-users',
@@ -6,5 +9,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./users.component.scss']
 })
 export class UsersComponent {
+  
+
+  constructor(
+    private http: HttpClient,
+    private toast: ToastrService
+  ) {}
+
+  async ngOnInit() {
+    
+  }
 
 }

@@ -13,6 +13,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { MenuComponent } from './layout/privado/menu/menu.component';
 import { UsersComponent } from './layout/privado/users/users.component';
+import { FormUserComponent } from './layout/privado/users/form-user/form-user.component';
+import { TableUserComponent } from './layout/privado/users/table-user/table-user.component';
 
 
 @NgModule({
@@ -22,6 +24,8 @@ import { UsersComponent } from './layout/privado/users/users.component';
     UploadComponent,
     MenuComponent,
     UsersComponent,
+    FormUserComponent,
+    TableUserComponent,
   ],
   imports: [
     BrowserModule,

@@ -6,7 +6,7 @@
       </button>
     </div>
     <div >
-      <button class="logout">
+      <button class="logout" [routerLink]="['/login']">
         <fa-icon [icon]="iconDoorClosed" class="door-closed"></fa-icon>
         <fa-icon [icon]="iconDoorOpen" class="door-open"></fa-icon>
       </button>
@@ -15,10 +15,10 @@
   <menu class="menu_hide">
     <div class="name_page"></div>
     <div class="options_menu">
-      <a href="#" *ngFor="let item of componentes; let i = index" [attr.data-index]="i" [routerLink]="[item.ruta]" >
+      <a href="#" *ngFor="let item of componentes; let i = index" [attr.data-index]="i" [routerLink]="[item.ruta]" (click)="closeMenu()" >
         <div class="option" >
           <fa-icon class="icon_menu" [icon]="item.icon" [title]="item.name"></fa-icon>
-          <p>{{item.name}}</p>
+          <h5>{{item.name}}</h5>
         </div>
       </a>
     </div>

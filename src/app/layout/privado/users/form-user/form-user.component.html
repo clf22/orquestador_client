@@ -1,0 +1,35 @@
+<div class="main">
+  <div class="form-container">
+    <button (click)="toggleForm()">
+      <fa-icon [icon]="iconNewUser" ></fa-icon>
+      Nuevo Usuario
+    </button>
+    
+    <div class="form form-hide">
+      <form (ngSubmit)="onSubmit()" [formGroup]="myForm">
+        <div class="main-form">
+          <div class="form-items">
+            <div class="item">
+              <span>Name:</span><input type="text" name="name" formControlName="name">
+            </div>
+            <div class="item">
+              <span>Password:</span><input type="text" name="password" formControlName="password">
+            </div>
+            <div class="item">
+              <span>Email:</span><input type="text" name="email" formControlName="email">
+            </div>
+            <div class="item">
+              <span>Phone:</span><input type="text" name="phone" formControlName="phone">
+            </div>
+            <div class="item">
+              <span>Rol:</span><input type="text" name="rol" formControlName="rol">
+            </div>
+          </div>
+          <div class="actions">
+            <button type="submit">Guardar</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

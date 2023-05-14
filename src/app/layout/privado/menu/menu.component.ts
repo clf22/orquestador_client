@@ -23,7 +23,7 @@ export class MenuComponent {
   componentes = [
     {name:'PROCESOS', icon: faRobot, ruta: '/upload' },
     {name:'TRABAJOS', icon: faPlay, ruta: '/upload' },
-    {name:'USUARIOS', icon: faUsers, ruta: '/upload'},
+    {name:'USUARIOS', icon: faUsers, ruta: '/users'},
     {name:'EMPRESAS', icon: faBuilding, ruta: '/upload' },
     {name:'ADMINISTRACIÓN', icon: faGear, ruta: '/upload' }]
 
@@ -36,6 +36,14 @@ export class MenuComponent {
       menu.classList.remove('menu_open');
     }
     this.toggleMenu = !this.toggleMenu
+  }
+
+  closeMenu () {
+    const menu = document.querySelector('menu')
+    if (this.toggleMenu && menu) {
+      menu.classList.remove('menu_open');
+    }
+    this.toggleMenu = false
   }
 
 }
