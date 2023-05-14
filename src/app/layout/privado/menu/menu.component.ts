@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { faRobot, faPlay, faUsers, faGear, faBuilding, faBars, faDoorClosed, faDoorOpen } from '@fortawesome/free-solid-svg-icons';
 import { MenuService } from './menu.service';
+import { Location } from '@angular/common';
+
 
 @Component({
   selector: 'app-menu',
@@ -14,18 +16,23 @@ export class MenuComponent {
   public menuVisible = false;
   private toggleMenu = false
 
-  constructor(private menuService: MenuService) {}
+  constructor(
+    private menuService: MenuService,
+    private location: Location 
+  ) {}
 
   ngOnInit(): void {
     this.menuService.menuVisible$.subscribe(visible => this.menuVisible = visible)
+    this.checkActive(this.location.path())
   }
 
   componentes = [
-    {name:'PROCESOS', icon: faRobot, ruta: '/upload' },
-    {name:'TRABAJOS', icon: faPlay, ruta: '/upload' },
-    {name:'USUARIOS', icon: faUsers, ruta: '/users'},
-    {name:'EMPRESAS', icon: faBuilding, ruta: '/upload' },
-    {name:'ADMINISTRACIÓN', icon: faGear, ruta: '/upload' }]
+    {name:'PROCESOS', icon: faRobot, ruta: '/process', active: true },
+    {name:'TRABAJOS', icon: faPlay, ruta: '/jobs', active: false },
+    {name:'USUARIOS', icon: faUsers, ruta: '/users', active: false},
+    {name:'EMPRESAS', icon: faBuilding, ruta: '/company', active: false },
+    {name:'ADMINISTRACIÓN', icon: faGear, ruta: '/config', active: false }
+  ]
 
   eventToggleMenu() {
     const menu = document.querySelector('menu')
@@ -38,7 +45,8 @@ export class MenuComponent {
     this.toggleMenu = !this.toggleMenu
   }
 
-  closeMenu () {
+  closeMenu (route:string) {
+    this.checkActive(route)
     const menu = document.querySelector('menu')
     if (this.toggleMenu && menu) {
       menu.classList.remove('menu_open');
@@ -46,4 +54,13 @@ export class MenuComponent {
     this.toggleMenu = false
   }
 
+  checkActive(route:string) {
+    for(let i of this.componentes) {
+      if(i.ruta === route) {
+        i.active = true
+      } else {
+        i.active = false
+      }
+    }
+  }
 }

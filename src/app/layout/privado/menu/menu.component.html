@@ -15,7 +15,7 @@
   <menu class="menu_hide">
     <div class="name_page"></div>
     <div class="options_menu">
-      <a href="#" *ngFor="let item of componentes; let i = index" [attr.data-index]="i" [routerLink]="[item.ruta]" (click)="closeMenu()" >
+      <a href="#" *ngFor="let item of componentes; let i = index" [attr.data-index]="i" [routerLink]="[item.ruta]" (click)="closeMenu(item.ruta)" [class.active]="item.active" >
         <div class="option" >
           <fa-icon class="icon_menu" [icon]="item.icon" [title]="item.name"></fa-icon>
           <h5>{{item.name}}</h5>

@@ -9,7 +9,11 @@ const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'upload', component: UploadComponent, canActivate: [AuthGuard]},
-  { path: 'users', component: UsersComponent, canActivate: [AuthGuard]}
+  { path: 'process', component: UploadComponent, canActivate: [AuthGuard]},
+  { path: 'jobs', component: UploadComponent, canActivate: [AuthGuard]},
+  { path: 'users', component: UsersComponent, canActivate: [AuthGuard]},
+  { path: 'company', component: UploadComponent, canActivate: [AuthGuard]},
+  { path: 'config', component: UploadComponent, canActivate: [AuthGuard]},
 ];
 
 @NgModule({

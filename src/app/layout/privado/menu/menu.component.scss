@@ -117,6 +117,16 @@ menu {
         color: $textMenu;
       }
     }
+    .active {
+      .option {
+        .icon_menu {
+          color: white;
+        }
+        h5 {
+          color: white;
+        }
+      }
+    }
   }
 }
 
