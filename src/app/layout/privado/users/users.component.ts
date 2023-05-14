@@ -1,7 +1,7 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { lastValueFrom, tap } from 'rxjs';
 import { ToastrService } from 'ngx-toastr';
+import { TableUserService } from './table-user/table-user.service';
 
 @Component({
   selector: 'app-users',
@@ -12,12 +12,13 @@ export class UsersComponent {
   
 
   constructor(
-    private http: HttpClient,
-    private toast: ToastrService
+    private tableUserServices: TableUserService
   ) {}
 
   async ngOnInit() {
+    console.log('On init User component');
     
+    await this.tableUserServices.cargarUsuarios()
   }
 
 }

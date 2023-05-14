@@ -2,6 +2,10 @@ import { Component } from '@angular/core';
 import { faUserPlus } from '@fortawesome/free-solid-svg-icons';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
+import { HttpService } from 'src/app/utils/http.service';
+import { HttpHeaders } from '@angular/common/http';
+import { TableUserComponent } from '../table-user/table-user.component';
+import { TableUserService } from '../table-user/table-user.service';
 
 @Component({
   selector: 'app-form-user',
@@ -14,23 +18,36 @@ export class FormUserComponent {
   public iconNewUser:any = faUserPlus
   public visibleForm:boolean = false
   
-  constructor(private fb: FormBuilder, private toast: ToastrService) {}
+  constructor(
+    private fb: FormBuilder,
+    private toast: ToastrService,
+    private http: HttpService,
+    private tableUserService: TableUserService
+  ){
+  }
 
   ngOnInit(){
+    console.log('On init Form User component');
     this.myForm = this.fb.group({
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      password: ['', Validators.required],
+      passwd: ['', Validators.required],
       phone: [''],
-      rol: ['', Validators.required]
+      idRol: ['', Validators.required]
     });
   }
 
-  onSubmit() {
+  async onSubmit() {
     if(this.myForm.invalid) {
       this.toast.error('Rellene los campos')
     }
-    // Lógica para enviar los datos del formulario
+    let resp = await this.http.request('POST', 'http://localhost:3000/api/user', {
+      body: this.myForm.value,
+      headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+    })
+
+    this.toast.success('Usuario creado correctamente', 'Exito!')
+    this.tableUserService.cargarUsuarios()
   }
 
   public toggleForm() {

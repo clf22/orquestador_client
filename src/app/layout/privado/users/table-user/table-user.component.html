@@ -2,11 +2,11 @@
   <table class="tabla-usuarios">
     <thead>
       <tr>
-        <th *ngFor="let header of tableHeader">{{header}}</th>
+        <th *ngFor="let header of this.tableUserServices.dataHeader">{{header}}</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let usuario of usuarios">
+      <tr *ngFor="let usuario of this.tableUserServices.data">
         <td>{{ usuario.id }}</td>
         <td>{{ usuario.name }}</td>
         <td>{{ usuario.passwd }}</td>
