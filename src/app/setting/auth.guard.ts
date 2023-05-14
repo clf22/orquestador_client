@@ -7,6 +7,7 @@ export function canActivateFn(
   authService: AuthService,
   router: Router
 ): (route: ActivatedRouteSnapshot, state: RouterStateSnapshot) => boolean | Observable<boolean> | Promise<boolean> {
+  
   return (route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean => {
     let authRouter = authService.checkAccess();
     if (!authRouter) {router.navigate(['/login']);}

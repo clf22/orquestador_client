@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { lastValueFrom, tap } from 'rxjs';
 import { ToastrService } from 'ngx-toastr';
+import { faUpload } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-upload',
@@ -9,7 +10,7 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./upload.component.scss']
 })
 export class UploadComponent {
-
+  public faUpload = faUpload
   constructor(private http: HttpClient, private toast: ToastrService) {}
 
   public myFile: File | null | undefined;

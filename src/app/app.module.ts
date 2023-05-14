@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,13 +11,17 @@ import { UploadComponent } from './layout/privado/upload/upload.component';
 import { AuthGuard } from './setting/auth.guard';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { MenuComponent } from './layout/privado/menu/menu.component';
+import { UsersComponent } from './layout/privado/users/users.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    UploadComponent
+    UploadComponent,
+    MenuComponent,
+    UsersComponent,
   ],
   imports: [
     BrowserModule,
@@ -25,7 +30,8 @@ import { ToastrModule } from 'ngx-toastr';
     HttpClientModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    FontAwesomeModule,
   ],
   providers: [AuthGuard],
   bootstrap: [AppComponent]

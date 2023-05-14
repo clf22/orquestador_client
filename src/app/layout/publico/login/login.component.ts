@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient, HttpHeaders} from '@angular/common/http'
-import { tap} from 'rxjs/operators'
-import { lastValueFrom } from 'rxjs';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { MenuService } from '../../privado/menu/menu.service';
 
 @Component({
   selector: 'app-login',
@@ -14,11 +13,12 @@ import { ToastrService } from 'ngx-toastr';
 export class LoginComponent implements OnInit {
   public myForm!:FormGroup;
   
-  constructor(private fb:FormBuilder, private http:HttpClient, private router:Router, private toast: ToastrService) {}
+  constructor(private fb:FormBuilder, private http:HttpClient, private router:Router, private toast: ToastrService, private menuService: MenuService) {}
 
   ngOnInit(): void {
-    this.myForm = this.createMyForm();
     sessionStorage.clear()
+    this.menuService.hide()
+    this.myForm = this.createMyForm();
   }
 
   private createMyForm():FormGroup {
@@ -52,10 +52,11 @@ export class LoginComponent implements OnInit {
     body.set('username', credentials.username);
     body.set('password', credentials.password);
 
-    console.log(apiUrl, body.toString(), httpOptions);
+    // console.log(apiUrl, body.toString(), httpOptions);
     
     try {
-      let respuesta = await lastValueFrom(this.http.post(apiUrl, body.toString(), httpOptions)
+      /*TODO: CAMBIAR LLAMADA
+        let respuesta = await lastValueFrom(this.http.post(apiUrl, body.toString(), httpOptions)
         .pipe(
           tap( (res:any) => {
             // acción a realizar en caso de respuesta exitosa
@@ -66,7 +67,10 @@ export class LoginComponent implements OnInit {
       if(respuesta.code === 200) {
         sessionStorage.setItem('access_token', respuesta.data);
         this.router.navigate(['/upload']);
-      }
+      }*/
+      sessionStorage.setItem('access_token', 'prueba');
+      this.menuService.show()
+      this.router.navigate(['/upload']);
     } catch (error:any) {
       this.toast.error(error.message)
       console.error(error.status);

@@ -5,9 +5,9 @@ import { UploadComponent } from './layout/privado/upload/upload.component';
 import { AuthGuard } from './setting/auth.guard';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/upload', pathMatch: 'full' },
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
-  { path: 'upload', component: UploadComponent, canActivate: [AuthGuard]}
+  { path: 'upload', component: UploadComponent, canActivate: [AuthGuard]},
 ];
 
 @NgModule({
