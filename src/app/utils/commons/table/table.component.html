@@ -10,7 +10,7 @@
         <td *ngFor="let item of row">{{ item[row] }}</td>
       </tr>
       <tr *ngIf="!data || data.length == 0">
-        <td *ngFor="let item of headers">-</td>
+        <td [attr.colspan]="headers?.length||0">No hay datos para mostrar</td>
       </tr>
     </tbody>
   </table> 

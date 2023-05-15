@@ -1,4 +1,4 @@
 <main>
-  <app-form></app-form>
+  <app-form [fields]="this.userService.dataHeader" [name]="name" ></app-form>
   <app-table [data]="this.userService.data" [headers]="this.userService.dataHeader"></app-table>
 </main>

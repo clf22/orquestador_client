@@ -7,6 +7,7 @@ import { RolService } from './rol.service';
   styleUrls: ['./rol.component.scss']
 })
 export class RolComponent {
+  public name='rol'
   constructor(
     public rolService: RolService
   ) {}

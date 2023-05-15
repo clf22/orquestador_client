@@ -7,7 +7,7 @@ import { UserService } from './users.service';
   styleUrls: ['./users.component.scss']
 })
 export class UsersComponent {
-  
+  public name='usuario'
 
   constructor(public userService:UserService) {}
 

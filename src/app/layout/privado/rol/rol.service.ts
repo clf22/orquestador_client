@@ -29,7 +29,6 @@ export class RolService {
         this.toast.warning('No se han podido cargar las cabeceras los usuarios','¡Advertencia!')
         return
       }
-      //this.dataHeader = Object.keys(this.data[0])
     } catch (error:any) {
       this.toast.error(error.message)
       console.error(error.status);

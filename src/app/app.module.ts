@@ -13,7 +13,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { MenuComponent } from './layout/privado/menu/menu.component';
 import { UsersComponent } from './layout/privado/users/users.component';
-import { FormUserComponent } from './utils/commons/form/form.component';
+import { FormComponent } from './utils/commons/form/form.component';
 import { ConfigComponent } from './layout/privado/config/config.component';
 import { RolComponent } from './layout/privado/rol/rol.component';
 import { TableComponent } from './utils/commons/table/table.component';
@@ -27,7 +27,7 @@ import { TableComponent } from './utils/commons/table/table.component';
     UploadComponent,
     MenuComponent,
     UsersComponent,
-    FormUserComponent,
+    FormComponent,
     ConfigComponent,
     RolComponent,
     TableComponent
