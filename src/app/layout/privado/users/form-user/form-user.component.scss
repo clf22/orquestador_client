@@ -23,7 +23,7 @@ $azul-zafiro: #0F52BA;
       border: 1px solid $azul-zafiro;
       border-radius: 5px;
       cursor: pointer;
-      width: 150px;
+      width: 200px;
       transition: background-color .35s ease-in-out;
   
       &:hover {
@@ -36,15 +36,24 @@ $azul-zafiro: #0F52BA;
       border-radius: 30px;
       margin-top: 10px;
       &.form {
-        width: 25%;
+        width: fit-content;
+        input {
+          width: 150px;
+        }
+        select {
+          width: 158px;
+        }
         .form-items {
           padding: 20px;
           display: flex;
-          flex-direction: column;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: start;
           .item {
             padding: 2px;
+            text-align: left;
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
           }
         }
         

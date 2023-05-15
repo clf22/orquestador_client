@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
-import { TableUserService } from './table-user/table-user.service';
+import { UserService } from './user.service';
 
 @Component({
   selector: 'app-users',
@@ -12,13 +12,11 @@ export class UsersComponent {
   
 
   constructor(
-    private tableUserServices: TableUserService
+    private tableUserServices: UserService
   ) {}
 
   async ngOnInit() {
     console.log('On init User component');
-    
-    await this.tableUserServices.cargarUsuarios()
   }
 
 }

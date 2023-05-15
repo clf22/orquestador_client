@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TableUserService } from './table-user.service';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-table-user',
@@ -8,7 +8,7 @@ import { TableUserService } from './table-user.service';
 })
 export class TableUserComponent {
   constructor(
-    public tableUserServices: TableUserService
+    public tableUserServices: UserService
   ) {}
 
   async ngOnInit() {

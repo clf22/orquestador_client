@@ -24,7 +24,7 @@ export class HttpService {
       return resp
     } catch (error:any) {
       console.error(error);
-      this.toast.error(error.message)
+      this.toast.error(error.error)
       return []
     }
   }

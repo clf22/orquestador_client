@@ -5,7 +5,7 @@ import { ToastrService } from 'ngx-toastr';
 import { HttpService } from 'src/app/utils/http.service';
 import { HttpHeaders } from '@angular/common/http';
 import { TableUserComponent } from '../table-user/table-user.component';
-import { TableUserService } from '../table-user/table-user.service';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-form-user',
@@ -22,11 +22,11 @@ export class FormUserComponent {
     private fb: FormBuilder,
     private toast: ToastrService,
     private http: HttpService,
-    private tableUserService: TableUserService
+    public userService: UserService
   ){
   }
 
-  ngOnInit(){
+  async ngOnInit(){
     console.log('On init Form User component');
     this.myForm = this.fb.group({
       name: ['', Validators.required],
@@ -35,11 +35,13 @@ export class FormUserComponent {
       phone: [''],
       idRol: ['', Validators.required]
     });
+    await this.userService.getRoles()
   }
 
   async onSubmit() {
     if(this.myForm.invalid) {
       this.toast.error('Rellene los campos')
+      return
     }
     let resp = await this.http.request('POST', 'http://localhost:3000/api/user', {
       body: this.myForm.value,
@@ -47,7 +49,7 @@ export class FormUserComponent {
     })
 
     this.toast.success('Usuario creado correctamente', 'Exito!')
-    this.tableUserService.cargarUsuarios()
+    this.userService.cargarUsuarios()
   }
 
   public toggleForm() {
