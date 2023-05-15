@@ -1,0 +1,42 @@
+$azul-zafiro: #0F52BA;
+
+h1 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: $azul-zafiro;
+  font-size: xx-large;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin-top: -20vh;
+}
+
+label, button {
+  display: inline-block;
+  padding: 10px;
+  font-size: 16px;
+  color: #fff;
+  background-color: $azul-zafiro;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 300px;
+  box-sizing: border-box;
+  text-align: center;
+  margin: 10px 0;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

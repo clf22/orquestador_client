@@ -1,0 +1,12 @@
+<form [formGroup]="myForm" (ngSubmit)="submitFormulario()">
+  <h1>ORQUESTADOR</h1>
+  <div>
+    <label for="usuario">Usuario:</label>
+    <input formControlName="usuario" type="text" id="usuario" name="usuario" >
+  </div>
+  <div>
+    <label for="contrasena">Contraseña:</label>
+    <input formControlName="password" type="password" id="contrasena" name="contrasena" >
+  </div>
+  <button type="submit" [disabled]="myForm.invalid">Conectar</button>
+</form>

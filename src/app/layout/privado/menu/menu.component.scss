@@ -1,0 +1,168 @@
+$azul: #0F52BA;
+$azul-alpha: #0F52BAAA;
+$textMenu: #000000AA;
+$plata: #C0C0C0;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: system-ui;
+}
+
+header {
+  left: 0;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+
+  .icon_menu {
+    border-bottom: 1px solid black;
+    background-color: $azul-alpha;
+
+    .toggle{
+      font-size: 1.5rem;
+      transition: .3s;
+    }
+    .toggle:hover{
+      font-size: 1.75rem;
+      transition: .3s;
+      color: white;
+    }
+  }
+
+  .logout {
+    transition: .3s;
+    background: white;
+    .door-closed{
+      font-size: 2rem;
+      color: $azul;
+    }
+    .door-open {
+      display: none;
+    }
+  }
+  .logout:hover{
+    transition: .3s;
+    background: $azul;
+    .door-closed{
+      display: none;
+    }
+    .door-open {
+      display: initial;
+      font-size: 2rem;
+      color: white;
+    }
+  }
+
+  button {
+    cursor: pointer;
+    border: none;
+    width: 50px;
+    height: 50px;
+    background-color: $azul;
+  }
+}
+
+menu {
+  width: 50px;
+  height: 100%;
+  position: fixed;
+  background: $azul;
+  margin-top: 50px;
+  top: 0;
+  left: 0;
+  color: white;
+  font-size: 1rem;
+  z-index: 0;
+  overflow: hidden;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  transition: .3s;
+
+  .name_page {
+    display: flex;
+    align-items: center;
+    align-content: center;
+  }
+
+  .options_menu {
+    a {
+      height: 100%;
+
+      .option:hover {
+        .icon_menu {
+          color: white;
+        }
+        h5 {
+          color: white;
+        }
+      } 
+      .icon_menu {
+        color: $textMenu;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+      }
+      h5 {
+        display: none;
+        color: $textMenu;
+      }
+    }
+    .active {
+      .option {
+        .icon_menu {
+          color: white;
+        }
+        h5 {
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+.menu_open {
+  width: 200px;
+  transition: 0.5s;
+
+  .name_page {
+    display: flex;
+    align-items: center;
+    align-content: center;
+  }
+
+  .options_menu {
+    a {
+      .option {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        //justify-content: center;
+        .icon_menu {
+          width: 20px;
+          //display: none;
+        }
+        h5 {
+          margin-left: 10px;
+          display: initial;
+        }
+      }
+      .option:hover {
+        background-color: #FFFFFF59;
+      }
+    }
+  }
+}
+
+menu::-webkit-scrollbar {
+  display: none;
+}

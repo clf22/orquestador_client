@@ -1,0 +1,22 @@
+<div class="main">
+  <table class="tabla-usuarios">
+    <thead>
+      <tr>
+        <th *ngFor="let header of this.tableUserServices.dataHeader">{{header}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let usuario of this.tableUserServices.data">
+        <td>{{ usuario.id }}</td>
+        <td>{{ usuario.name }}</td>
+        <td>{{ usuario.passwd }}</td>
+        <td>{{ usuario.email }}</td>
+        <td>{{ usuario.phone }}</td>
+        <td>{{ usuario.more }}</td>
+        <td>{{ usuario.idRol }}</td>
+        <td>{{ usuario.createdAt }}</td>
+        <td>{{ usuario.updatedAt }}</td>
+      </tr>
+    </tbody>
+  </table> 
+</div> 

@@ -1,0 +1,11 @@
+<div class="container">
+    <h1>Subida de fichero</h1>
+    <label for="archivo" class="custom-file-upload">
+      <fa-icon [icon]="faUpload"></fa-icon> {{!myFile?'seleccionar archivo':'Cambiar archivo'}}
+    </label>
+    <input id="archivo" type="file" (change)="handleFileInput($event)" />
+
+    <div *ngIf="myFile">Archivo seleccionado: {{ myFile.name }}</div>
+
+    <button (click)="uploadFile()" [disabled]="!myFile">Subir</button>
+</div>
