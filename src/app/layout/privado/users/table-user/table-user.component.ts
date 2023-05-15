@@ -8,11 +8,12 @@ import { UserService } from '../user.service';
 })
 export class TableUserComponent {
   constructor(
-    public tableUserServices: UserService
+    public userService: UserService
   ) {}
 
   async ngOnInit() {
     console.log('On init Table User component');
-    await this.tableUserServices.cargarUsuarios()
+    await this.userService.cargarUsuarios()
+    await this.userService.cabeceraUsuarios()
   }
 }
