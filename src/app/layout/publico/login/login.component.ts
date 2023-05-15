@@ -70,7 +70,7 @@ export class LoginComponent implements OnInit {
       }*/
       sessionStorage.setItem('access_token', 'prueba');
       this.menuService.show()
-      this.router.navigate(['/upload']);
+      this.router.navigate(['/process']);
     } catch (error:any) {
       this.toast.error(error.message)
       console.error(error.status);

@@ -15,6 +15,8 @@ import { MenuComponent } from './layout/privado/menu/menu.component';
 import { UsersComponent } from './layout/privado/users/users.component';
 import { FormUserComponent } from './layout/privado/users/form-user/form-user.component';
 import { TableUserComponent } from './layout/privado/users/table-user/table-user.component';
+import { ConfigComponent } from './layout/privado/config/config.component';
+import { RolComponent } from './layout/privado/config/rol/rol.component';
 
 
 @NgModule({
@@ -26,6 +28,8 @@ import { TableUserComponent } from './layout/privado/users/table-user/table-user
     UsersComponent,
     FormUserComponent,
     TableUserComponent,
+    ConfigComponent,
+    RolComponent,
   ],
   imports: [
     BrowserModule,
