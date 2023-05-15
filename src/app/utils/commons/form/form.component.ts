@@ -4,13 +4,11 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { HttpService } from 'src/app/utils/http.service';
 import { HttpHeaders } from '@angular/common/http';
-import { TableUserComponent } from '../table-user/table-user.component';
-import { UserService } from '../user.service';
 
 @Component({
-  selector: 'app-form-user',
-  templateUrl: './form-user.component.html',
-  styleUrls: ['./form-user.component.scss']
+  selector: 'app-form',
+  templateUrl: './form.component.html',
+  styleUrls: ['./form.component.scss']
 })
 
 export class FormUserComponent {
@@ -18,11 +16,11 @@ export class FormUserComponent {
   public iconNewUser:any = faUserPlus
   public visibleForm:boolean = false
   
+  
   constructor(
     private fb: FormBuilder,
     private toast: ToastrService,
     private http: HttpService,
-    public userService: UserService
   ){
   }
 
@@ -35,11 +33,10 @@ export class FormUserComponent {
       phone: [''],
       idRol: ['', Validators.required]
     });
-    await this.userService.getRoles()
   }
 
   async onSubmit() {
-    if(this.myForm.invalid) {
+    /*if(this.myForm.invalid) {
       this.toast.error('Rellene los campos')
       return
     }
@@ -48,8 +45,7 @@ export class FormUserComponent {
       headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
     })
 
-    this.toast.success('Usuario creado correctamente', 'Exito!')
-    this.userService.cargarUsuarios()
+    this.toast.success('Usuario creado correctamente', 'Exito!')*/
   }
 
   public toggleForm() {

@@ -1,4 +1,4 @@
 <main>
-  <app-form-user></app-form-user>
-  <app-table-user></app-table-user>
+  <app-form></app-form>
+  <app-table [data]="this.userService.data" [headers]="this.userService.dataHeader"></app-table>
 </main>

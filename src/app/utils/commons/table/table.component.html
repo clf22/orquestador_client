@@ -1,0 +1,17 @@
+<div class="main">
+  <table class="tabla-usuarios">
+    <thead>
+      <tr>
+        <th *ngFor="let header of headers">{{header[0]}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of data">
+        <td *ngFor="let item of row">{{ item[row] }}</td>
+      </tr>
+      <tr *ngIf="!data || data.length == 0">
+        <td *ngFor="let item of headers">-</td>
+      </tr>
+    </tbody>
+  </table> 
+</div> 

@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TableUserComponent } from './table-user.component';
+import { TableUserComponent } from './table.component';
 
 describe('TableUserComponent', () => {
   let component: TableUserComponent;
