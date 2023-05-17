@@ -50,6 +50,7 @@ export class FormComponent {
     try {
       await this.service.create({form: this.myForm.value})
       this.toast.success(`${this.name?.toUpperCase()} creado correctamente`, 'Exito!')
+      this.myForm.reset()
       this.service.getData()
     } catch (error:any) {
       console.error(error);
