@@ -17,6 +17,7 @@ import { FormComponent } from './utils/commons/form/form.component';
 import { ConfigComponent } from './layout/privado/config/config.component';
 import { RolComponent } from './layout/privado/rol/rol.component';
 import { TableComponent } from './utils/commons/table/table.component';
+import { CompanyComponent } from './layout/privado/company/company.component';
 
 
 
@@ -30,7 +31,8 @@ import { TableComponent } from './utils/commons/table/table.component';
     FormComponent,
     ConfigComponent,
     RolComponent,
-    TableComponent
+    TableComponent,
+    CompanyComponent
   ],
   imports: [
     BrowserModule,

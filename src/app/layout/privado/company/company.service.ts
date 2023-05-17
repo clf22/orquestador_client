@@ -6,7 +6,8 @@ import { HttpService } from 'src/app/utils/http.service';
 @Injectable({
   providedIn: 'root'
 })
-export class RolService {
+export class CompanyService {
+
   public data: any = []
   public dataHeader:any
 
@@ -17,7 +18,7 @@ export class RolService {
 
   async getHeader():Promise<any> {
     try {
-      let apiUrl: string = 'http://localhost:3000/api/rol/header'
+      let apiUrl: string = 'http://localhost:3000/api/company/header'
       const httpOptions:any = {
         headers: new HttpHeaders({
           'Content-Type': 'application/x-www-form-urlencoded'
@@ -25,7 +26,7 @@ export class RolService {
       };
       this.dataHeader = await this.request.request('GET', apiUrl)
       if(!this.data) {
-        this.toast.warning('No se han podido cargar las cabeceras los roles','¡Advertencia!')
+        this.toast.warning('No se han podido cargar las cabeceras las empresas','¡Advertencia!')
         return
       }
     } catch (error:any) {
@@ -36,7 +37,7 @@ export class RolService {
 
   async getData():Promise<any> {
     try {
-      let apiUrl: string = 'http://localhost:3000/api/rol'
+      let apiUrl: string = 'http://localhost:3000/api/company'
       const httpOptions:any = {
         headers: new HttpHeaders({
           'Content-Type': 'application/x-www-form-urlencoded'
@@ -45,11 +46,11 @@ export class RolService {
       //TODO: CAMBIAR LLAMADA
       this.data = await this.request.request('GET', apiUrl)
       if(!this.data) {
-        this.toast.warning('No se han podido recuperar los roles', '¡Advertencia!')
+        this.toast.warning('No se han podido recuperar las empresas', '¡Advertencia!')
         return
       }
       if(this.data.length === 0) {
-        this.toast.warning('Actualmente no hay roles configurados en el sistema','¡Advertencia!')
+        this.toast.warning('Actualmente no hay empresas configuradas en el sistema','¡Advertencia!')
         return
       }
     } catch (error:any) {
@@ -59,7 +60,7 @@ export class RolService {
   }
 
   async create({form}:any):Promise<any> {
-    return this.request.request('POST', 'http://localhost:3000/api/rol', {
+    return this.request.request('POST', 'http://localhost:3000/api/company', {
       body: form,
       headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
     })

@@ -39,8 +39,9 @@ header {
   }
 
   .logout {
-    transition: .3s;
+    transition: .5s;
     background: white;
+    border-radius: 100px;
     .door-closed{
       font-size: 2rem;
       color: $azul;
@@ -50,6 +51,7 @@ header {
     }
   }
   .logout:hover{
+    border-radius: 0px;
     transition: .3s;
     background: $azul;
     .door-closed{

@@ -3,7 +3,7 @@ import { UserService } from './users.service';
 import { faUserPlus } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
-  selector: 'app-users',
+  selector: 'app-user',
   templateUrl: './users.component.html',
   styleUrls: ['./users.component.scss']
 })
