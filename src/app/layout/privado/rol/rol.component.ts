@@ -16,6 +16,6 @@ export class RolComponent {
 
   async ngOnInit() {
     await this.rolService.getHeader()
-    await this.rolService.getRoles()
+    await this.rolService.getData()
   }
 }

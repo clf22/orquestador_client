@@ -16,7 +16,7 @@ export class UsersComponent {
   async ngOnInit() {
     console.log('On init User component');
     await this.userService.getHeader()
-    await this.userService.getUsers()
+    await this.userService.getData()
   }
 
 }

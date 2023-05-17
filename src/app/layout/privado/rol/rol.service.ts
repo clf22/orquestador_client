@@ -34,7 +34,7 @@ export class RolService {
     }
   }
 
-  async getRoles():Promise<any> {
+  async getData():Promise<any> {
     try {
       let apiUrl: string = 'http://localhost:3000/api/rol'
       const httpOptions:any = {
@@ -58,7 +58,7 @@ export class RolService {
     }
   }
 
-  async postRol({form}:any):Promise<any> {
+  async create({form}:any):Promise<any> {
     return this.request.request('POST', 'http://localhost:3000/api/rol', {
       body: form,
       headers: new HttpHeaders({ 'Content-Type': 'application/json' }),

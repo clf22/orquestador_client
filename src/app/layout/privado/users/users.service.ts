@@ -15,7 +15,7 @@ export class UserService {
     private toast: ToastrService,
   ) { }
 
-  async getUsers():Promise<any> {
+  async getData():Promise<any> {
     try {
       let apiUrl: string = 'http://localhost:3000/api/user'
       const httpOptions:any = {
@@ -61,7 +61,7 @@ export class UserService {
     }
   }
 
-  async postUsuario({form}:any):Promise<any> {
+  async create({form}:any):Promise<any> {
     return this.request.request('POST', 'http://localhost:3000/api/user', {
       body: form,
       headers: new HttpHeaders({ 'Content-Type': 'application/json' }),

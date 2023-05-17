@@ -10,7 +10,10 @@
           <div class="form-items">
             <div class="item" *ngFor="let item of form">
               <span>{{item[0]}}:</span>
-              <input [attr.type]="item[1]" [attr.name]="item[0]" [formControlName]="item[0]" (click)="item[1] === 'checkbox' ? handlerCheckbox($event) : null" >
+              <input *ngIf="item[1]!=='select'" [attr.type]="item[1]" [attr.name]="item[0]" [formControlName]="item[0]" (click)="item[1] === 'checkbox' ? handlerCheckbox($event) : null" >
+              <select [attr.name]="item[0]" [attr.id]="item[0]" options *ngIf="item[1]==='select'" [formControlName]="item[0]">
+                <option *ngFor="let option of item[2]" [value]="option.id">{{option.name}}</option>
+              </select>
             </div>
           </div>
           <div class="actions">
