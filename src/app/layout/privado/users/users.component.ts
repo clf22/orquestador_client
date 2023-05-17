@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { UserService } from './users.service';
+import { faUserPlus } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-users',
@@ -7,7 +8,8 @@ import { UserService } from './users.service';
   styleUrls: ['./users.component.scss']
 })
 export class UsersComponent {
-  public name='usuario'
+  public name='user'
+  public iconForm = faUserPlus
 
   constructor(public userService:UserService) {}
 

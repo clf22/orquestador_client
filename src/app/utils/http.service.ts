@@ -19,13 +19,6 @@ export class HttpService {
   ) {}
 
   async request(method:string, url:string, options:any=this.defaultOptions) {
-    try {
-      let resp:any = await lastValueFrom(this.http.request(method, url, options));
-      return resp
-    } catch (error:any) {
-      console.error(error);
-      this.toast.error(error.error)
-      return []
-    }
+    return lastValueFrom(this.http.request(method, url, options));
   }
 }

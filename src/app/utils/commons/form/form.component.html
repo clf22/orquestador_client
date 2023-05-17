@@ -1,15 +1,16 @@
 <div class="main">
   <div class="form-container">
     <button (click)="toggleForm()">
-      <fa-icon [icon]="iconNewUser" ></fa-icon>
-      Nuevo {{name}}
+      <fa-icon [icon]="iconForm" ></fa-icon>
+      New {{name}}
     </button>
     <div class="form form-hide">
       <form (ngSubmit)="onSubmit()" [formGroup]="myForm">
         <div class="main-form">
           <div class="form-items">
             <div class="item" *ngFor="let item of form">
-              <span>{{item}}:</span><input type="text" name="item" [formControlName]="item">
+              <span>{{item[0]}}:</span>
+              <input [attr.type]="item[1]" [attr.name]="item[0]" [formControlName]="item[0]" (click)="item[1] === 'checkbox' ? handlerCheckbox($event) : null" >
             </div>
           </div>
           <div class="actions">

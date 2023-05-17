@@ -14,4 +14,7 @@ export class TableComponent {
   async ngOnInit() {
     console.log('On init Table component');
   }
+
+  ngOnChanges() {
+  }
 }

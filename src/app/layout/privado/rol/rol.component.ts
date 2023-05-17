@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RolService } from './rol.service';
+import { faAddressCard } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-rol',
@@ -8,6 +9,7 @@ import { RolService } from './rol.service';
 })
 export class RolComponent {
   public name='rol'
+  public iconForm = faAddressCard
   constructor(
     public rolService: RolService
   ) {}

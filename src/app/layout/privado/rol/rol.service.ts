@@ -23,7 +23,6 @@ export class RolService {
           'Content-Type': 'application/x-www-form-urlencoded'
         })
       };
-      //TODO: CAMBIAR LLAMADA
       this.dataHeader = await this.request.request('GET', apiUrl)
       if(!this.data) {
         this.toast.warning('No se han podido cargar las cabeceras los usuarios','¡Advertencia!')
@@ -57,5 +56,12 @@ export class RolService {
       this.toast.error(error.message)
       console.error(error.status);
     }
+  }
+
+  async postRol({form}:any):Promise<any> {
+    return this.request.request('POST', 'http://localhost:3000/api/rol', {
+      body: form,
+      headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+    })
   }
 }

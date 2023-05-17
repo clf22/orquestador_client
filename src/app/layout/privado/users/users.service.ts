@@ -50,7 +50,7 @@ export class UserService {
       };
       //TODO: CAMBIAR LLAMADA
       this.dataHeader = await this.request.request('GET', apiUrl)
-      if(!this.data) {
+      if(!this.dataHeader) {
         this.toast.warning('No se han podido cargar las cabeceras los usuarios','¡Advertencia!')
         return
       }
@@ -59,5 +59,12 @@ export class UserService {
       this.toast.error(error.message)
       console.error(error.status);
     }
+  }
+
+  async postUsuario({form}:any):Promise<any> {
+    return this.request.request('POST', 'http://localhost:3000/api/user', {
+      body: form,
+      headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+    })
   }
 }

@@ -1,2 +1,2 @@
-<app-form [fields]="this.rolService.dataHeader" [name]="name"></app-form>
+<app-form [fields]="this.rolService.dataHeader" [name]="name" [iconForm]="iconForm" [submitFn]="this.rolService.postRol"></app-form>
 <app-table [data]="this.rolService.data" [headers]="this.rolService.dataHeader"></app-table>
