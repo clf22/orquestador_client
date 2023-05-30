@@ -1,0 +1,46 @@
+$azul-zafiro: #0F52BA;
+
+@keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    25% {
+      transform: rotate(90deg);
+    }
+    50% {
+      transform: rotate(360deg);
+    }
+    55% {
+      transform: translateX(-10px);
+    }
+    60% {
+      transform: translateX(+10px);
+    }
+    65% {
+      transform: translateX(-10px);
+    }
+    70% {
+      transform: translateX(+10px);
+    }
+    75% {
+      transform: translateX(0px);
+    }
+    100% {
+      transform: translateX(0px);
+    }
+  }
+  
+  .icon {
+    border: 1px solid $azul-zafiro;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 50px;
+    animation: spin 1.5s linear infinite;
+    color: $azul-zafiro; /* Ajusta el color según tus preferencias */
+    position: absolute; /* Ajusta la posición según tus necesidades */
+    top: 50%; /* Ajusta la posición según tus necesidades */
+    left: 50%; /* Ajusta la posición según tus necesidades */
+    transform: translate(-50%, -50%); /* Centra el icono horizontalmente y verticalmente */
+    transform-origin: center center; /* Establece el punto de transformación en el centro */
+  }
+  
