@@ -18,6 +18,8 @@ import { ConfigComponent } from './layout/privado/config/config.component';
 import { RolComponent } from './layout/privado/rol/rol.component';
 import { TableComponent } from './utils/commons/table/table.component';
 import { CompanyComponent } from './layout/privado/company/company.component';
+import { ProcessComponent } from './layout/privado/process/process.component';
+import { JobComponent } from './layout/privado/job/job.component';
 
 
 
@@ -32,7 +34,9 @@ import { CompanyComponent } from './layout/privado/company/company.component';
     ConfigComponent,
     RolComponent,
     TableComponent,
-    CompanyComponent
+    CompanyComponent,
+    ProcessComponent,
+    JobComponent
   ],
   imports: [
     BrowserModule,

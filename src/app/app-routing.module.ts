@@ -6,13 +6,15 @@ import { AuthGuard } from './setting/auth.guard';
 import { UsersComponent } from './layout/privado/users/users.component';
 import { ConfigComponent } from './layout/privado/config/config.component';
 import { CompanyComponent } from './layout/privado/company/company.component';
+import { ProcessComponent } from './layout/privado/process/process.component';
+import { JobComponent } from './layout/privado/job/job.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/process', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'upload', component: UploadComponent, canActivate: [AuthGuard]},
-  { path: 'process', component: UploadComponent, canActivate: [AuthGuard]},
-  { path: 'jobs', component: UploadComponent, canActivate: [AuthGuard]},
+  { path: 'process', component: ProcessComponent, canActivate: [AuthGuard]},
+  { path: 'jobs', component: JobComponent, canActivate: [AuthGuard]},
   { path: 'users', component: UsersComponent, canActivate: [AuthGuard]},
   { path: 'company', component: CompanyComponent, canActivate: [AuthGuard]},
   { path: 'config', component: ConfigComponent, canActivate: [AuthGuard]},
