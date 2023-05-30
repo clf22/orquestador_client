@@ -4,6 +4,6 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class SpinnerService {
-  public toggleSpinner:Boolean = true
+  public toggleSpinner:Boolean = false
   constructor() { }
 }
