@@ -15,7 +15,7 @@ export class HttpService {
   }
   constructor(
     private http: HttpClient,
-    private toast: ToastrService
+    private toast: ToastrService,
   ) {}
 
   async request(method:string, url:string, options:any=this.defaultOptions) {

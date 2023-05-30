@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { faRobot, faJedi } from '@fortawesome/free-solid-svg-icons';
+import { SpinnerService } from '../../services/spinner.service';
 
 @Component({
   selector: 'app-load-icon',
@@ -8,4 +9,8 @@ import { faRobot, faJedi } from '@fortawesome/free-solid-svg-icons';
 })
 export class LoadIconComponent {
   public icon = faRobot
+
+  constructor(
+    public spinnerService: SpinnerService
+  ) {}
 }

@@ -20,7 +20,7 @@ import { TableComponent } from './utils/commons/table/table.component';
 import { CompanyComponent } from './layout/privado/company/company.component';
 import { ProcessComponent } from './layout/privado/process/process.component';
 import { JobComponent } from './layout/privado/job/job.component';
-import { LoadIconComponent } from './layout/publico/load-icon/load-icon.component';
+import { LoadIconComponent } from './utils/commons/load-icon/load-icon.component';
 
 
 

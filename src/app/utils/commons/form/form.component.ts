@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
-import { HttpService } from '../../http.service';
+import { HttpService } from '../../services/http.service';
 
 @Component({
   selector: 'app-form',
