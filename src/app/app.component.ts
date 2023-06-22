@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component } from '@angular/core';
+import { Component } from '@angular/core';
 import { AuthService } from './setting/auth.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { AuthService } from './setting/auth.service';
 export class AppComponent {
   title: string = 'my-app';
   menu: boolean = false
-  constructor(public authService: AuthService, private cdr: ChangeDetectorRef){}
+  constructor(public authService: AuthService){}
   async ngOnInit() {
     this.menu = this.authService.checkAccess()
   }

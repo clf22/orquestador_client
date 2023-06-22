@@ -8,6 +8,7 @@ import { ConfigComponent } from './layout/privado/config/config.component';
 import { CompanyComponent } from './layout/privado/company/company.component';
 import { ProcessComponent } from './layout/privado/process/process.component';
 import { JobComponent } from './layout/privado/job/job.component';
+import { DataBarComponent } from './utils/commons/data-bar/data-bar.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/process', pathMatch: 'full' },
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'users', component: UsersComponent, canActivate: [AuthGuard]},
   { path: 'company', component: CompanyComponent, canActivate: [AuthGuard]},
   { path: 'config', component: ConfigComponent, canActivate: [AuthGuard]},
+  { path: 'test', component: DataBarComponent}
 ];
 
 @NgModule({

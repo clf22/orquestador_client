@@ -21,6 +21,8 @@ import { CompanyComponent } from './layout/privado/company/company.component';
 import { ProcessComponent } from './layout/privado/process/process.component';
 import { JobComponent } from './layout/privado/job/job.component';
 import { LoadIconComponent } from './utils/commons/load-icon/load-icon.component';
+import { StatisticsComponent } from './utils/commons/statistics-unused/statistics.component';
+import { DataBarComponent } from './utils/commons/data-bar/data-bar.component';
 
 
 
@@ -38,7 +40,9 @@ import { LoadIconComponent } from './utils/commons/load-icon/load-icon.component
     CompanyComponent,
     ProcessComponent,
     JobComponent,
-    LoadIconComponent
+    LoadIconComponent,
+    StatisticsComponent,
+    DataBarComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,6 @@
+<main>
+  <div class="progress-bar">
+    <div class="item-bar" *ngFor="let bar of percentage" [ngClass]="getBarClass(bar)"></div>
+    <span class="percentage-text">100%</span>
+  </div>
+</main>
