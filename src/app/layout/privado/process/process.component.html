@@ -1,3 +1,15 @@
 <main>
-  <app-table [data]="this.processService.data" [headers]="this.processService.dataHeader"></app-table>
+  <!-- <app-table [data]="this.processService.data" [headers]="this.processService.dataHeader"></app-table> -->
+  <div class="cards">
+    <div class="card" *ngFor="let data of this.processService.data">
+      <div class="card-title">
+        <h1>{{data.name}}</h1>
+      </div>
+      <div class="card-body">
+        <button class="actions" *ngFor="let icon of buttons">
+          <fa-icon [icon]="icon" ></fa-icon>
+        </button>
+      </div>
+    </div>
+  </div>
 </main>

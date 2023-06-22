@@ -1,0 +1,57 @@
+$azul-zafiro: #0F52BA;
+
+.cards {
+  margin-top: 20px;
+  margin-left: 10%;
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+}
+
+.card {
+  font-size: 10px;
+  width: 200px;
+  height: 150px;
+  // background-color: red;
+  border: 2px solid $azul-zafiro;
+  border-radius: 20px;
+  padding: 10px;
+  margin: 5px 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-title h1 {
+  color: $azul-zafiro;
+  font-size: 1.5rem;
+}
+
+.card-body {
+  width: 100%;
+  font-size: 1rem;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.actions {
+  font-size: 1.25rem;
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 100%;
+  color: $azul-zafiro;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  transition: 0.2s;
+}
+
+.actions:hover {
+  background-color: $azul-zafiro;
+  color: white;
+  transition: 0.3s;
+}

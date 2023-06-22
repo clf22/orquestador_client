@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ProcessService } from './process.service';
+import { faPlay, faList, faStop } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-process',
@@ -8,8 +9,7 @@ import { ProcessService } from './process.service';
 })
 export class ProcessComponent {
   public name='process'
-  // public iconForm = faUserPlus
-
+  public buttons: any[] = [faPlay,faList, faStop]
   constructor(public processService:ProcessService) {}
 
   async ngOnInit() {

@@ -1,0 +1,8 @@
+<div class="procesos-container">
+  <div *ngFor="let proceso of procesos" class="proceso-item">
+    <div class="proceso-nombre">{{ proceso.cpu }}%</div>
+    <div class="proceso-barra" >
+      <div class="proceso-barra-fill" [style.background]="getBarBackground(proceso.cpu)" [style.width.%]="proceso.cpu"></div>
+    </div>
+  </div>
+</div>

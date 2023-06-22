@@ -31,7 +31,10 @@ header {
       font-size: 1.5rem;
       transition: .3s;
     }
-    .toggle:hover{
+  }
+
+  .icon_menu:hover {
+    .toggle {
       font-size: 1.75rem;
       transition: .3s;
       color: white;
